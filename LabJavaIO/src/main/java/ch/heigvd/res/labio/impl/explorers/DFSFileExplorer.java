@@ -3,6 +3,7 @@ package ch.heigvd.res.labio.impl.explorers;
 import ch.heigvd.res.labio.interfaces.IFileExplorer;
 import ch.heigvd.res.labio.interfaces.IFileVisitor;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
@@ -26,6 +27,8 @@ public class DFSFileExplorer implements IFileExplorer {
     if (files == null) {
       return;
     }
+
+    Arrays.sort(files);
 
     for(File f : files) {
       if(f.isFile() || f.isDirectory()) {
